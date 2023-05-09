@@ -23,7 +23,7 @@ notifications:
 
 deploy:
   provider: script
-  script: "yarn dev"
+  script: "yarn run --host"
   on:
     branch: master
 

@@ -23,7 +23,7 @@ notifications:
 
 deploy:
   provider: script
-  script: "npm run start"
+  script: "yarn dev"
   on:
     branch: master
 

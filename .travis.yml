@@ -12,6 +12,7 @@ git:
   depth: 3
 
 script:
+  - yarn install
   - yarn test
 
 notifications:

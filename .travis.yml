@@ -1,0 +1,39 @@
+language: node_js
+
+cache:
+  directories:
+    - "node_modules"
+    - "~/.npm"
+
+node_js:
+  - "12"
+
+git:
+  depth: 3
+
+script:
+  - yarn test
+
+notifications:
+  email:
+    recipients:
+      - sexyespadachin1@gmail.com
+    on_success: always
+    on_failure: always
+
+deploy:
+  provider: script
+  script: "npm run start"
+  on:
+    branch: master
+
+# deploy:
+#   provider: heroku
+#   skip-cleanup: true
+#   keep-history: true
+#   github-token: $GITHUB_TOKEN
+#   local-dir: dist/
+#   target-branch: gh-pages
+#   commit-message: "Deploy from Travis CI"
+#   on:
+#     branch: master
